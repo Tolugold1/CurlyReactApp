@@ -48,7 +48,7 @@ const LoginPage = () => {
   useEffect(() => {
     if (login.errMess) {
       setTimeout(() => {
-        toast.error(error, {
+        toast.error(login.errMess, {
           position: "top-center",
         });
       }, 50);
@@ -65,7 +65,7 @@ const LoginPage = () => {
       console.log("data", data);
       const resultAction = await dispatch(signInFunction(data));
       console.log('resultAction:', resultAction);
-      if (resultAction.data.status == 'Sign in successful' && resultAction.data.statusCode == 200) {
+      if (resultAction?.data?.status == 'Sign in successful' && resultAction?.data?.statusCode == 200) {
         // Redirect based on the checkbox (isBusiness) value.
         if (data.acctType == "Official") {
           navigate('/business-dashboard');

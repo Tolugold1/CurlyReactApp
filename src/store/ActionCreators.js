@@ -46,7 +46,7 @@ export const signInFunction = (cred) => async (dispatch) => {
         return response.data;
     } catch (error) {
         console.log("error", error);
-        dispatch(login_failed(error.response.data.message));
+        dispatch(login_failed(error.response.data?.data?.status));
     }
 };
 
