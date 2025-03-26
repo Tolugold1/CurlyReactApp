@@ -96,25 +96,25 @@ const BusinessProfilePage = () => {
             <div className="grid grid-cols-4 gap-4 mt-6 border-t pt-4">
               <div className="text-center">
                 <h3 className="text-xl font-bold">{customers.message !== null ? customers.message?.length : 0}</h3>
-                <p className="text-gray-500 text-sm">Bookings</p>
+                <p className="text-gray-500 vsm:text-xs md:text-sm">Bookings</p>
               </div>
               <div className="text-center">
                 <h3 className="text-xl font-bold">{items.message !== null ? items.message?.length : 0}</h3>
-                <p className="text-gray-500 text-sm">Booking items created</p>
+                <p className="text-gray-500 vsm:text-xs md:text-sm">Booking items created</p>
               </div>
               <div className="text-center">
                 <h3 className="text-xl font-bold">{businessProfile.message?.reviews || 0}</h3>
-                <p className="text-gray-500 text-sm">Reviews</p>
+                <p className="text-gray-500 vsm:text-xs md:text-sm">Reviews</p>
               </div>
               <div className="text-center">
                 <h3 className="text-xl font-bold">{businessProfile.message?.totalViews || 0}</h3>
-                <p className="text-gray-500 text-sm">Views</p>
+                <p className="text-gray-500 vsm:text-xs md:text-sm">Views</p>
               </div>
             </div>
 
             {/* Services Offered */}
             <h3 className="mt-6 text-lg font-bold">Services</h3>
-            <div className="grid grid-cols-2 gap-4 mt-2">
+            <div className="grid vsm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
               {items.message?.map((service) => (
                 <div key={service.id} className="p-4 border rounded-lg">
                   <h4 className="font-semibold">{service.name}</h4>

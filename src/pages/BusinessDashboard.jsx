@@ -292,9 +292,9 @@ const BusinessDashboard = () => {
       </div> */}
 
       {/* Main Dashboard */}
-      <main className="p-6 bg-gray-100">
+      <main className="p-6 bg-gray-100 w-full">
         {/* Top Stats */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="flex flex-wrap vsm:gap-2 md:gap-4">
           <div className="p-4 bg-white shadow rounded-lg">
             <h3 className="text-gray-500">customers</h3>
             <p className="text-xl font-bold">{customers.message !== null ? customers.message?.length : 0}</p>
@@ -349,7 +349,7 @@ const BusinessDashboard = () => {
           {/* Weekly Bookings */}
           <div className="bg-white shadow rounded-lg p-6 md:col-span-2 w-full">
             <h3 className="text-lg font-bold text-gray-700">This Week Booking</h3>
-            <div className='w-full h-[300px] md:h-[400px]'>
+            <div className='w-full max-h-[300px]'>
               <Bar ref={barChartRef} key={JSON.stringify(bookingData)} data={bookingData} options={barChartOptions}/>
             </div>            
           </div>
@@ -357,27 +357,27 @@ const BusinessDashboard = () => {
           {/* Analytics */}
           <div className="bg-white shadow rounded-lg p-6 md:col-span-2 w-full">
             <h3 className="text-lg font-bold text-gray-700">Analytics</h3>
-            <div className='w-full h-[300px] md:h-[400px]'>
+            <div className='w-full max-h-[300px]'>
               <Line ref={lineChartRef} key={JSON.stringify(lineChartData)} data={lineChartData} options={lineChartOptions} />
             </div>
           </div>
         </div>
 
         {/* Recent Bookings Table */}
-        <div className="bg-white shadow rounded-lg p-6 mt-6 w-full">
+        <div className="bg-white shadow rounded-lg p-6 mt-6 w-full relative overflow-x-auto">
           <div className='flex items-center justify-between'>
-            <h3 className="text-lg font-bold text-gray-700">Recent Bookings</h3>
-            <button className="flex items-center bg-pink-500 px-4 py-2 rounded-lg hover:bg-pink-600 text-white" onClick={() => setEdit(true)}>
+            <h3 className="text-lg font-bold text-gray-700  vsm:text-xs">Recent Bookings</h3>
+            <button className="flex items-center bg-pink-500 px-4 py-2 rounded-lg hover:bg-pink-600 text-white vsm:text-xs" onClick={() => setEdit(true)}>
               <FiPlus className="mr-2" />Add Customer</button>
           </div>
-          <table className="w-full mt-4">
+          <table className="w-full min-w-max text-left mt-4">
             <thead>
               <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                <th className="py-3 px-6 text-left">Customer Name</th>
-                <th className="py-3 px-6 text-left">Email</th>
-                <th className="py-3 px-6 text-left">Address</th>
-                <th className="py-3 px-6 text-left">Edit Booking</th>
-                <th className="py-3 px-6 text-left">Delete</th>
+                <th className="py-3 px-6 text-left  vsm:text-xs">Customer Name</th>
+                <th className="py-3 px-6 text-left  vsm:text-xs">Email</th>
+                <th className="py-3 px-6 text-left vsm:text-xs">Address</th>
+                <th className="py-3 px-6 text-left vsm:text-xs">Edit Booking</th>
+                <th className="py-3 px-6 text-left vsm:text-xs">Delete</th>
                 {/* <th className="py-3 px-6 text-left">Payment Method</th> */}
               </tr>
             </thead>
@@ -385,11 +385,11 @@ const BusinessDashboard = () => {
               {customers.message?.map(customer => {
                 return (
                   <tr className="border-b border-gray-200 hover:bg-gray-100">
-                    <td className="py-3 px-6 text-left">{customer.name}</td>
-                    <td className="py-3 px-6 text-left">{customer.email}</td>
-                    <td className="py-3 px-6 text-left text-green-500">{customer.address}</td>
-                    <td className="py-3 px-6 text-left" onClick={() => onEditCustomer(customer)}><AiFillEdit /></td>
-                    <td className="py-3 px-6 text-left" onClick={() => onDeleteCustomer(customer)}><MdDeleteForever /></td>
+                    <td className="py-3 px-6 text-left vsm:text-xs ">{customer.name}</td>
+                    <td className="py-3 px-6 text-left vsm:text-xs">{customer.email}</td>
+                    <td className="py-3 px-6 text-left vsm:text-xs text-green-500">{customer.address}</td>
+                    <td className="py-3 px-6 text-left vsm:text-xs" onClick={() => onEditCustomer(customer)}><AiFillEdit /></td>
+                    <td className="py-3 px-6 text-left vsm:text-xs" onClick={() => onDeleteCustomer(customer)}><MdDeleteForever /></td>
                     {/* <td className="py-3 px-6 text-left">{booking.paymentMethod}</td> */}
                   </tr>
                 );
@@ -404,11 +404,11 @@ const BusinessDashboard = () => {
               <form onSubmit={EditCustomer} className="space-y-4">
                 <input type="hidden" name="customerId" value={newCustomer?.customerId} />
 
-                <input type="text" name="name" value={newCustomer?.name} placeholder='Name'  onChange={(e) => setNewCustomer((prev) => ({...prev, name: e.target.value}))} className='w-full p-2' />
+                <input type="text" name="name" value={newCustomer?.name} placeholder='Name'  onChange={(e) => setNewCustomer((prev) => ({...prev, name: e.target.value}))} className='w-full p-2 border-2 rounded-lg' />
 
-                <input type="text" name="email" value={newCustomer?.email} placeholder='Email' onChange={(e) => setNewCustomer((prev) => ({...prev, email: e.target.value}))} className='w-full p-2' />
+                <input type="text" name="email" value={newCustomer?.email} placeholder='Email' onChange={(e) => setNewCustomer((prev) => ({...prev, email: e.target.value}))} className='w-full p-2 border-2 rounded-lg' />
 
-                <input type="text" name="address" value={newCustomer?.address} placeholder='Address' onChange={(e) => setNewCustomer((prev) => ({...prev, address: e.target.value}))} className='w-full p-2' />
+                <input type="text" name="address" value={newCustomer?.address} placeholder='Address' onChange={(e) => setNewCustomer((prev) => ({...prev, address: e.target.value}))} className='w-full p-2 border-2 rounded-lg' />
   
                 {/* <input type="text" name="location" value={newCustomer?.location} placeholder='Location' onChange={(e) => setNewCustomer({location: e.target.value})} /> */}
   
