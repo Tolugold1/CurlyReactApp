@@ -347,7 +347,7 @@ const BusinessDashboard = () => {
         {/* Charts */}
         <div className="grid vsm:grid-col-2 md:grid-cols-4 gap-6 mt-6">
           {/* Weekly Bookings */}
-          <div className="bg-white shadow rounded-lg p-6 md:col-span-2 w-full h-[300px] md:h-[400px]">
+          <div className="bg-white shadow rounded-lg p-6 md:col-span-2 w-full h-[300px] md:h-[450px]">
             <h3 className="text-lg font-bold text-gray-700">This Week Booking</h3>
             <div className='w-full h-[300px] md:h-[400px]'>
               <Bar ref={barChartRef} key={JSON.stringify(bookingData)} data={bookingData} options={barChartOptions}/>
@@ -355,7 +355,7 @@ const BusinessDashboard = () => {
           </div>
 
           {/* Analytics */}
-          <div className="bg-white shadow rounded-lg p-6 md:col-span-2 w-full h-[300px] md:h-[400px]">
+          <div className="bg-white shadow rounded-lg p-6 md:col-span-2 w-full h-[300px] md:h-[450px]">
             <h3 className="text-lg font-bold text-gray-700">Analytics</h3>
             <div className='w-full h-[300px] md:h-[400px]'>
               <Line ref={lineChartRef} key={JSON.stringify(lineChartData)} data={lineChartData} options={lineChartOptions} />
