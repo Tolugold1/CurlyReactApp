@@ -12,5 +12,5 @@ export default defineConfig({
       }
     }
   },
-  base: '/', // Ensure this is set correctly for Netlify
+  // base: '/', // Ensure this is set correctly for Netlify
 })
