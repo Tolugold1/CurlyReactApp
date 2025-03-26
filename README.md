@@ -1,12 +1,69 @@
-# React + Vite
+# Chuly Scheduling And Dashboard
+## 📌 Schedulo - Business Booking Platform
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Table of Contents
+- [📌 About Schedulo](#-about-schedulo)
+- [🚀 Features](#-features)
+- [🛠 Tech Stack](#-tech-stack)
+- [⚙️ Installation](#️-installation)
+- [🌍 Deployment](#-deployment)
+- [📞 Contact](#-contact)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 About Schedulo
+**Schedulo** is a business booking platform designed to help businesses manage their bookings efficiently while allowing clients to schedule services with ease. Whether it's **restaurants, spas, event planners, or coworking spaces**, Schedulo simplifies scheduling and analytics.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+### 🔹 For Businesses
+- ✅ Create & manage a **business profile**  
+- ✅ Create booking items
+- ✅ Create customers   
+- ✅ View **real-time booking analytics** (Daily, Weekly, Monthly) 
+- ✅ Set **availability slots** & **working hours**  
+- ✅ Business dashboard with insights  
+
+### 🔹 General
+- ✅ Secure **authentication system** (Email Login)  
+- ✅ **Responsive design** (Mobile & Desktop friendly)  
+- ✅ Protected Routes with **JWT Authentication**  
+- ✅ **Interactive charts & analytics** (Using Chart.js)  
+- ✅ **Role-based access** (Business vs. Client)
+
+---
+
+## 🛠 Tech Stack
+### 🏗 Frontend
+- **React.js** (with Vite)
+- **Redux** (State Management)
+- **TailwindCSS** (Styling)
+- **React Hook Form** (Form Validation)
+- **React Router** (Navigation)
+- **Chart.js** (Data Visualization)
+
+### 🖥 Backend
+- **Node.js & Express.js** (REST API)
+- **MongoDB & Mongoose** (Database)
+- **JWT Authentication** (Secure Auth)
+- **Joi** (Input Validation)
+
+### ☁️ Deployment
+- **Frontend** → [Schedulo](https://chuly-react-app-steve.vercel.app)
+- **Backend** → [Backend](https://chuly-backend.vercel.app/api)
+
+---
+
+## ⚙️ Installation
+### 🚀 Clone the Repository
+```sh
+git clone https://github.com/Tolugold1/CurlyReactApp.git
+cd CurlyReactApp
+npm install
+npm run dev
+```
+
+## 📞Contact
+- **Email**: toluadelekesteve@gmail.com
