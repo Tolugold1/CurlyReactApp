@@ -59,8 +59,8 @@
 ## ⚙️ Installation
 ### 🚀 Clone the Repository
 ```sh
-git clone https://github.com/Tolugold1/Airbox-frontend.git
-cd Airbox-frontend
+git clone https://github.com/Tolugold1/CurlyReactApp.git
+cd CurlyReactApp
 npm install
 npm run dev
 ```
