@@ -180,6 +180,25 @@ const BusinessDashboard = () => {
       }
     };
   }, []);
+  
+  // Define chart options for responsiveness
+  const barChartOptions = {
+    responsive: true,
+    // maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true },
+      tooltip: { enabled: true },
+    },
+  };
+
+  const lineChartOptions = {
+    responsive: true,
+    // maintainAspectRatio: false,
+    plugins: {
+      legend: { display: true },
+      tooltip: { enabled: true },
+    },
+  };
 
   const bookingData = {
     // labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -273,7 +292,7 @@ const BusinessDashboard = () => {
       </div> */}
 
       {/* Main Dashboard */}
-      <main className="flex-1 p-6 bg-gray-100">
+      <main className="p-6 bg-gray-100">
         {/* Top Stats */}
         <div className="grid grid-cols-4 gap-4">
           <div className="p-4 bg-white shadow rounded-lg">
@@ -328,15 +347,15 @@ const BusinessDashboard = () => {
         {/* Charts */}
         <div className="grid vsm:grid-col-2 md:grid-cols-4 gap-6 mt-6">
           {/* Weekly Bookings */}
-          <div className="bg-white shadow rounded-lg p-6 col-span-2">
+          <div className="bg-white shadow rounded-lg p-6 md:col-span-2 ">
             <h3 className="text-lg font-bold text-gray-700">This Week Booking</h3>
-            <Bar ref={barChartRef} key={JSON.stringify(bookingData)} data={bookingData} />
+            <Bar ref={barChartRef} key={JSON.stringify(bookingData)} data={bookingData} options={barChartOptions}/>
           </div>
 
           {/* Analytics */}
-          <div className="bg-white shadow rounded-lg p-6 col-span-2">
+          <div className="bg-white shadow rounded-lg p-6 md:col-span-2">
             <h3 className="text-lg font-bold text-gray-700">Analytics</h3>
-            <Line ref={lineChartRef} key={JSON.stringify(lineChartData)} data={lineChartData} />
+            <Line ref={lineChartRef} key={JSON.stringify(lineChartData)} data={lineChartData} options={lineChartOptions} />
           </div>
         </div>
 
